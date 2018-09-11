@@ -1,0 +1,35 @@
+{
+  "page": {
+    "mySushi": "My Sushi",
+    "allSushi": "ALL Sushi",
+    "market": "Sushi Market",
+    "termsOfService": "Terms of service"
+  },
+  "sushi": {
+    "action": {
+      "sell": "Sell",
+      "buy": "Buy",
+      "sellConfirm": "Sell",
+      "cancel": "Cancel",
+      "generate": "Make Sushi"
+    },
+    "status": {
+      "sell": "On sale",
+      "cancelTx": "Canceling",
+      "sellTx": "Selling",
+      "generateTx": "Making"
+    }
+  },
+  "error": {
+    "alreadyBoughtOrCanceled": "Sold out or canceled.",
+    "notEnoughGariForMakingSushi": "Not enough Gari for making Sushi.",
+    "notEnoughGariForPurchase": "Not enough Gari for purchase.",
+    "alreadyBought": "Sold out.",
+    "priceShouldBeSetAsAnIntegerOf1To999": "The price should be set as an integer of 1 to 999.",
+    "sushiNotFound": "Sushi not found",
+    "canNotBuyOwnSushi": "Can not buy your own sushi",
+    "priceNotFound": "Price not found",
+    "canNotSellSushiNotYours": "Can not sell sushi not yours",
+    "canNotCancelSellingSushiNotYours": "Can not cancel selling sushi not yours"
+  }
+}

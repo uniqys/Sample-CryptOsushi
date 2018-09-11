@@ -1,0 +1,36 @@
+{
+  "page": {
+    "mySushi": "マイSushi",
+    "allSushi": "全てのSushi",
+    "market": "Sushiマーケット",
+    "termsOfService": "利用規約"
+  },
+  "sushi": {
+    "action": {
+      "sell": "売る",
+      "buy": "買う",
+      "sellConfirm": "売り出す",
+      "cancel": "キャンセル",
+      "generate": "にぎる"
+    },
+    "status": {
+      "sell": "販売中",
+      "cancelTx": "キャンセルしています",
+      "sellTx": "売り出しています",
+      "generateTx": "にぎっています"
+    }
+  },
+  "error": {
+    "exception": "問題が発生しました",
+    "alreadyBoughtOrCanceled": "すでに購入されているか、キャンセルされています。",
+    "notEnoughGariForMakingSushi": "にぎるためのgariが不足しています。",
+    "notEnoughGariForPurchase": "購入するためのガリが不足しています。",
+    "alreadyBought": "すでに購入されています。",
+    "priceShouldBeSetAsAnIntegerOf1To999": "販売額は1〜999の整数で設定してください。",
+    "sushiNotFound": "Sushiが見つかりません",
+    "canNotBuyOwnSushi": "自分のSushiを買うことはできません",
+    "priceNotFound": "価格が入力されていません",
+    "canNotSellSushiNotYours": "自分以外のSushiを売ることはできません",
+    "canNotCancelSellingSushiNotYours": "自分以外のSushiの販売をキャンセルすることはできません"
+  }
+}

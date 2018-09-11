@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "streetsidesoftware.code-spell-checker",
+    "wayou.vscode-todo-highlight",
+    "EditorConfig.editorconfig",
+    "sysoev.language-stylus",
+    "octref.vetur",
+    "esbenp.prettier-vscode"
+  ]
+}

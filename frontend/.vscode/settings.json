@@ -1,0 +1,29 @@
+{
+  "cSpell.ignoreRegExpList": ["[０-９Ａ-Ｚａ-ｚぁ-んァ-ヶ亜-熙纊-黑]+"],
+  "cSpell.userWords": [
+    "mailto",
+    "vue",
+    "nuxt",
+    "nuxtjs",
+    "fontawesome",
+    "fortawesome",
+    "webfonts",
+    "uniqys",
+    "quragé",
+    "Quragé",
+    "qurage",
+    "kurage",
+    "ethereum",
+    "blockchain"
+  ],
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    { "autoFix": true, "language": "typescript" },
+    { "autoFix": true, "language": "vue" }
+  ],
+  "editor.formatOnSave": true,
+  "vetur.format.defaultFormatter.js": "none",
+  "vetur.format.defaultFormatter.ts": "none",
+  "vetur.format.defaultFormatter.stylus": "prettier"
+}

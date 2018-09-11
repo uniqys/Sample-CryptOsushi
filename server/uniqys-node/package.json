@@ -1,0 +1,28 @@
+{
+  "name": "uniqys-node",
+  "license": "MIT",
+  "dependencies": {
+    "@uniqys/blockchain": "^0.0.3",
+    "@uniqys/chain-core-dev": "^0.0.3",
+    "@uniqys/easy-framework": "^0.0.3",
+    "@uniqys/signature": "^0.0.3",
+    "@uniqys/store": "^0.0.3",
+    "leveldown": "^4.0.1",
+    "url": "^0.11.0",
+    "yargs": "^12.0.2"
+  },
+  "devDependencies": {
+    "@types/debug": "^0.0.30",
+    "@types/leveldown": "^1.7.1",
+    "@types/memcached": "^2.2.5",
+    "@types/node": "^10.9.4",
+    "@types/yargs": "^11.1.1",
+    "@uniqys/type-definitions": "^0.0.3",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.0.3"
+  },
+  "scripts": {
+    "init": "ts-node src/init.ts",
+    "start": "DEBUG=chain-core*,easy*,app* ts-node src/main.ts"
+  }
+}
