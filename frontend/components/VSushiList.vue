@@ -25,9 +25,7 @@ export default {
   },
   computed: {
     sushiList() {
-      const sushiList = map(this.sushiMapper, (sushi, key) => {
-        return Object.assign(sushi, { key })
-      })
+      const sushiList = map(this.sushiMapper, (sushi, key) => Object.assign(sushi, { key }))
       return orderBy(sushiList, ['id'], ['desc'])
     },
   },

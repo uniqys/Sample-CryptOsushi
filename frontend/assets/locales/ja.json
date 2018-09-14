@@ -17,7 +17,9 @@
       "sell": "販売中",
       "cancelTx": "キャンセルしています",
       "sellTx": "売り出しています",
-      "generateTx": "にぎっています"
+      "generateTx": "にぎっています",
+      "noResults": "寿司がありません",
+      "noMore": "これ以上ありません"
     }
   },
   "error": {

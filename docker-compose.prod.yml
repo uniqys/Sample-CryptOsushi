@@ -32,6 +32,8 @@ services:
     build:
       context: server/app
       dockerfile: Dockerfile
+    depends_on:
+      - frontend
     environment:
       HOST: "app"
       MEMCACHED_HOST: "uniqys-node"
@@ -43,3 +45,4 @@ services:
 volumes:
   bc-store:
   bc-config:
+

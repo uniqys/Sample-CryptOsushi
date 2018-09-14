@@ -17,7 +17,9 @@
       "sell": "On sale",
       "cancelTx": "Canceling",
       "sellTx": "Selling",
-      "generateTx": "Making"
+      "generateTx": "Making",
+      "noResults": "No results",
+      "noMore": "No more data"
     }
   },
   "error": {

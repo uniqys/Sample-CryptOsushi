@@ -37,6 +37,7 @@ module.exports = {
   */
   modules: [
     'nuxt-client-init-module',
+    'nuxt-vuex-router-sync',
     '@nuxtjs/proxy',
     '@nuxtjs/markdownit',
     ['nuxt-i18n', {

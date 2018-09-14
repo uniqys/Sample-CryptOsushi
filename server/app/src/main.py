@@ -8,19 +8,19 @@ config = get_config()
 static_dir_path = '/static'
 
 
-@route("/")
+@route('/')
 def index():
-    return static_file("index.html", root=static_dir_path)
+    return static_file('index.html', root=static_dir_path)
 
 
-@route("/<path:path>")
+@route('/<path:path>')
 def file_path(path):
     return static_file(path, root=static_dir_path)
 
 
-mount("/sushi", sushi.app)
-mount("/gari", gari.app)
+mount('/sushi', sushi.app)
+mount('/gari', gari.app)
 
-run(host=config['HOST'],
-    port=config['PORT'],
-    debug=True)
+run(server='tornado',
+    host=config['HOST'],
+    port=config['PORT'])

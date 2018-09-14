@@ -2,3 +2,4 @@ bottle
 pymemcache
 pysha3
 requests
+tornado

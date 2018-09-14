@@ -1,18 +1,20 @@
 <template>
   <main>
     <div class="container">
-      <h1 class="title">{{ $t('page.allSushi') }}</h1>
-      <v-infinite-sushi-list/>
+      <h1 class="title">利用規約</h1>
+      <div v-html="content"/>
     </div>
   </main>
 </template>
 
 <script>
-import VInfiniteSushiList from '~/components/VInfiniteSushiList'
+import content from '~/assets/markdown/terms-of-service/ja.md'
 
 export default {
-  components: {
-    VInfiniteSushiList,
+  data() {
+    return {
+      content,
+    }
   },
 }
 </script>

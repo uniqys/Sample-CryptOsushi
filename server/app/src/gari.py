@@ -19,14 +19,18 @@ DEFAULT_GARI = 10000
 API_BASE = config['API_BASE']
 
 
-@app.route("/tap", method="POST")
+@app.route('/tap', method='POST')
 @require_via_chain
 def index():
     sender = get_sender()
 
     balance = request.json.get('balance')
     if balance is None:
-        return make_response({'error': 'exception.balanceNotFound', 'body': 'balance not found'}, ok=False)
+        return make_response(
+            {
+                'error': 'exception.balanceNotFound',
+                'body': 'balance not found'
+            }, ok=False)
 
     operator_gari = refer_gari(OPERATOR_ADDRESS)
     if operator_gari < DEFAULT_GARI * 10:
@@ -35,13 +39,17 @@ def index():
     try:
         transfer_gari(OPERATOR_ADDRESS, sender, balance)
     except Exception as e:
-        return make_response({'error': 'error.exception', 'body': str(e)}, ok=False)
+        return make_response(
+            {
+                'error': 'error.exception',
+                'body': str(e)
+            }, ok=False)
 
     updated_balance = refer_gari(sender)
     return make_response({'balance': updated_balance}, ok=True)
 
 
-@app.route("/refer/:address")
+@app.route('/refer/:address')
 def tap(address):
     balance = refer_gari(address)
     return make_response({'balance': balance}, ok=True)
@@ -56,17 +64,17 @@ def refer_gari(address):
 
         return DEFAULT_GARI
 
-    api_url = f"{API_BASE}/accounts/{address}/balance"
+    api_url = f'{API_BASE}/accounts/{address}/balance'
     res = requests.get(api_url)
     return res.json()[0] if res else 0
 
 
 def put_gari(address, value):
-    api_url = f"{API_BASE}/accounts/{address}/balance"
+    api_url = f'{API_BASE}/accounts/{address}/balance'
     return requests.put(
         api_url,
         data=json.dumps([int(value)]),
-        headers={"Content-Type": "application/json"}
+        headers={'Content-Type': 'application/json'}
     )
 
 
@@ -75,11 +83,11 @@ def transfer_gari(sender, to, value):
     if int(sender_gari) < int(value):
         raise Exception('not enough gari.')
 
-    api_url = f"{API_BASE}/accounts/{sender}/transfer"
+    api_url = f'{API_BASE}/accounts/{sender}/transfer'
     res = requests.post(
         api_url,
-        data=json.dumps(dict({"to": str(to), "value": int(value)})),
-        headers={"Content-Type": "application/json"}
+        data=json.dumps(dict({'to': str(to), 'value': int(value)})),
+        headers={'Content-Type': 'application/json'}
     )
     if res.status_code != requests.codes.ok:
         raise Exception(res.text)

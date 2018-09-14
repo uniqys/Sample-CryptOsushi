@@ -9,7 +9,9 @@
   <div
     v-else-if="sushi.state === 'SaleInput'"
     class="price-input">
-    <input :class="{invalid: !isValid()}" v-model="editingPrice">
+    <input
+      :class="{invalid: !isValid()}"
+      v-model="editingPrice">
     <span>gari</span>
   </div>
   <div v-else />

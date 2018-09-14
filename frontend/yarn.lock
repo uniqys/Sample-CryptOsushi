@@ -4223,6 +4223,12 @@ nuxt-i18n@^5.2.1:
     vue-i18n "^8.0.0"
     vue-i18n-extensions "^0.2.0"
 
+nuxt-vuex-router-sync@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/nuxt-vuex-router-sync/-/nuxt-vuex-router-sync-0.0.2.tgz#d94f5bfc78551392bbf4334455ad20c9fbe677d9"
+  dependencies:
+    vuex-router-sync "^5.0.0"
+
 nuxt@^1.0.0:
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-1.4.2.tgz#54165be580374b8392ed1150f758e37ab3f7c61d"
@@ -6532,6 +6538,10 @@ vue-i18n@^8.0.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-8.1.0.tgz#a2bce3879f595b6188b419f8d2c6a74d8aee5eb7"
 
+vue-infinite-loading@^2.3.3:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/vue-infinite-loading/-/vue-infinite-loading-2.3.3.tgz#44922eff526828725fdb3c025e4b3a6d1d61c273"
+
 vue-loader@^13.7.2:
   version "13.7.2"
   resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-13.7.2.tgz#f633f6393e905ffd730400f03c99353618c08fe8"
@@ -6596,6 +6606,10 @@ vue-template-es2015-compiler@^1.6.0:
 vue@^2.5.17:
   version "2.5.17"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.17.tgz#0f8789ad718be68ca1872629832ed533589c6ada"
+
+vuex-router-sync@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/vuex-router-sync/-/vuex-router-sync-5.0.0.tgz#1a225c17a1dd9e2f74af0a1b2c62072e9492b305"
 
 vuex@^3.0.1:
   version "3.0.1"

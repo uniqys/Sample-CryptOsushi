@@ -17,9 +17,3 @@ $ yarn start
 
 # generate static project
 $ yarn generate
-
-# api mocking
-$ yarn mock
-```
-
-

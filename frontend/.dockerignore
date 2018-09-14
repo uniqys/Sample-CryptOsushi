@@ -1,0 +1,15 @@
+# docker
+Dockerfile
+.dockerignore
+
+# git
+.gitignore
+
+# doc
+*/README.md
+
+# dev
+.editorconfig
+.vscode
+.node-version
+node_modules
