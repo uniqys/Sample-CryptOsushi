@@ -22,11 +22,15 @@ export default {
       type: Object,
       default: () => {},
     },
+    type: {
+      type: String,
+      default: () => '',
+    }
   },
   computed: {
     sushiList() {
       const sushiList = map(this.sushiMapper, (sushi, key) => Object.assign(sushi, { key }))
-      return orderBy(sushiList, ['id'], ['desc'])
+      return orderBy(sushiList, ['id'], [this.type === 'market' ? 'asc' : 'desc'])
     },
   },
 }

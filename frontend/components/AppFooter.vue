@@ -4,12 +4,17 @@
       <ul class="link-list">
         <li>
           <router-link
-        :to="localePath('terms-of-service')"
-        class="policy">{{ $t('page.termsOfService') }}</router-link>
+            :to="localePath('terms-of-service')">{{ $t('page.termsOfService') }}</router-link>
         </li>
-        <li><a href="https://github.com/uniqys/UniqysKit-preview">GitHub (Uniqys Kit)</a></li>
-        <li><a href="https://github.com/uniqys/Sample-CryptOsushi">GitHub (CryptOsushi)</a></li>
-        <li><a href="https://medium.com/uniqys/uniqys-kit-dapps-development-part1-b45f380cfe82">Medium</a></li>
+        <li><a
+          href="https://github.com/uniqys/UniqysKit-preview"
+          target="_blank">GitHub (Uniqys Kit)</a></li>
+        <li><a
+          href="https://github.com/uniqys/Sample-CryptOsushi"
+          target="_blank">GitHub (CryptOsushi)</a></li>
+        <li><a
+          href="https://medium.com/uniqys/uniqys-kit-dapps-development-part1-b45f380cfe82"
+          target="_blank">Medium</a></li>
       </ul>
       <section class="copyright">
         <small>&copy; Uniqys Project</small>
@@ -36,15 +41,8 @@ footer {
     padding: 20px 30px;
     background-color: $color-background-lightgray;
 
-    .policy {
-      display: block;
-      color: $color-main;
-      text-decoration: none;
-    }
-
     .link-list {
       $_height = 20px;
-
       padding: 0;
 
       li {
@@ -62,6 +60,7 @@ footer {
         a {
           height: $_height;
           color: $color-main;
+          text-decoration: none;
         }
       }
     }

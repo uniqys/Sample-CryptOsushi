@@ -11,10 +11,19 @@
 
 <script>
 import VInfiniteSushiList from '~/components/VInfiniteSushiList'
+import { mapActions } from 'vuex'
 
 export default {
   components: {
     VInfiniteSushiList,
+  },
+  methods: {
+    ...mapActions('sushi', [
+      'reset'
+    ]),
+  },
+  created() {
+    this.reset()
   },
 }
 </script>

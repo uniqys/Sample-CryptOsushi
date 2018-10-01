@@ -1,6 +1,7 @@
 {
-  "name": "uniqys-node",
-  "license": "MIT",
+  "name": "uniqys-node-of-CryptOsushi",
+  "description": "CryptOsushi is a sample decentralized application made with Uniqys Kit.",
+  "author": "Uniqys Project <https://uniqys.net>",
   "dependencies": {
     "@uniqys/blockchain": "^0.0.4",
     "@uniqys/chain-core-dev": "^0.0.4",

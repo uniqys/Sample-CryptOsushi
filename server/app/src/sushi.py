@@ -161,9 +161,8 @@ def sell(id):
     sender = get_sender()
 
     body = request.environ['wsgi.input']
-    param = json.loads(body.getvalue().decode('utf8'))
+    param = json.loads(body.read().decode('utf8'))
     price = param.get("price")
-
     if price is None:
         return make_response(
             {

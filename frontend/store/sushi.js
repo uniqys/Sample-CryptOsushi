@@ -134,7 +134,10 @@ export const mutations = {
   },
   setGenerating(state, { generating }) {
     state.generating = generating
-  }
+  },
+  setAnimation(state, { type, key, animation }) {
+    Vue.set(state.sushiMapper[type][key], 'animation', animation)
+  },
 }
 
 export const actions = {
@@ -198,7 +201,7 @@ export const actions = {
       return
     }
     const { sushi } = data
-    context.commit('setSushi', { type, key: tempKey, sushi })
+    context.commit('setSushi', { type, key: tempKey, sushi: assign(sushi, { animation: true }) })
     context.commit('changeSushiState', { type, key: tempKey, newState: SushiState.Normal })
 
     await context.dispatch('gari/fetch', null, { root: true })
@@ -216,9 +219,7 @@ export const actions = {
       alert(this.app.i18n.t(data.error))
       return
     }
-    const { sushi } = data
-    context.commit('setSushi', { type, key, sushi })
-    context.commit('changeSushiState', { type, key, newState: SushiState.Normal })
+    context.commit('removeSushi', { type, key })
 
     await context.dispatch('gari/fetch', null, { root: true })
   },
@@ -232,10 +233,10 @@ export const actions = {
   },
   cancelSaleInput(context, { key }) {
     const type = context.getters.getType();
-    if (!context.state.sushiMapper[key]) {
+    if (!context.state.sushiMapper[type][key]) {
       return
     }
-    const nowState = context.state.sushiMapper[key].state;
+    const nowState = context.state.sushiMapper[type][key].state;
     if (nowState === SushiState.SaleInput) {
       context.commit('changeSushiState', { type, key, newState: SushiState.Normal })
     }
@@ -292,6 +293,13 @@ export const actions = {
       context.commit('changeSushiState', { type, key, newState: SushiState.Normal })
     }
     return null
+  },
+  stopAnimation(context, { type, key }) {
+    context.commit('setAnimation', {
+      type,
+      key,
+      animation: false
+    })
   },
   resetEditingPrice(context) {
     context.commit('setEditingPrice', 1);

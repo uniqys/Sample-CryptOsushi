@@ -18,7 +18,7 @@ const UNIQYS_INNER_API_PORT = Number(process.env.UNIQYS_INNER_API_PORT) || 56010
 const UNIQYS_MEMCACHED_PORT = Number(process.env.UNIQYS_MEMCACHED_PORT) || 56011
 
 const LEVELDOWN_DIR = process.env.LEVELDOWN_DIR || '.leveldown'
-const CONFIG_DIR = '/app/config'
+const CONFIG_DIR = process.env.CONFIG_DIR || '/app/config'
 
 async function startEasy () {
   // load config

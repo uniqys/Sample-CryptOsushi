@@ -6,11 +6,15 @@ services:
       context: frontend
       dockerfile: Dockerfile
       args:
-        DAPP_HOST: "uniqys-node"
+        UNIQYS_NODE_HOST: "uniqys-node"
+        UNIQYS_NODE_PORT: "8080"
+        DAPP_ENDPOINT: "http://localhost:3000"
     ports:
       - "3000:3000"
     environment:
-      DAPP_HOST: "uniqys-node"
+      UNIQYS_NODE_HOST: "uniqys-node"
+      UNIQYS_NODE_PORT: "8080"
+      DAPP_ENDPOINT: "http://localhost:3000"
     volumes:
       - "/app/node_modules"
       - "./frontend:/app"
@@ -44,6 +48,10 @@ services:
       MEMCACHED_HOST: "uniqys-node"
       API_BASE: 'http://uniqys-node:56010'
       OPERATOR_ADDRESS: "767f8f53ad2fa6c78ca097fd3e331b4454f58188"
+      SERVER: "gunicorn"
+      WORKER_NUM: 9
+      DEBUG: 'true'
+      AUTO_RELOAD: 'true'
     volumes:
       - "./server/app:/app"
     stdin_open: true

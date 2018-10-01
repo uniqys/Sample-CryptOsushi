@@ -1,10 +1,11 @@
 <template>
-  <div ref="poyo">
+  <div>
     <v-sushi-list
-      :sushi-mapper="getAllSushi()"/>
+      :sushi-mapper="getAllSushi()"
+      :type="getType()"/>
     <infinite-loading
       @infinite="infiniteHandler">
-      <span slot="no-results">{{ $t('sushi.status.noResults') }}</span>
+      <span slot="no-results" />
       <span slot="no-more">{{ $t('sushi.status.noMore') }}</span>
     </infinite-loading>
   </div>
@@ -25,17 +26,14 @@ export default {
   }),
   computed: {
     ...mapGetters({
+      getType: 'sushi/getType',
       getAllSushi: 'sushi/getAll',
       getStartId: 'sushi/getStartId',
     }),
   },
   methods: {
-    ...mapActions('gari', {
-      fetchGari: 'fetch',
-    }),
     ...mapActions('sushi', {
       fetchSushi: 'fetch',
-      reset: 'reset',
     }),
     async infiniteHandler($state) {
       await this.fetchSushi();

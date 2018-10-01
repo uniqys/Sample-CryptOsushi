@@ -1,4 +1,4 @@
-from bottle import mount, route, run, static_file
+from bottle import mount, route, run, static_file, redirect
 
 import sushi
 import gari
@@ -6,7 +6,6 @@ from util import get_config
 
 config = get_config()
 static_dir_path = '/static'
-
 
 @route('/')
 def index():
@@ -21,6 +20,9 @@ def file_path(path):
 mount('/sushi', sushi.app)
 mount('/gari', gari.app)
 
-run(server='tornado',
+run(server=config['SERVER'],
+    workers=config['WORKER_NUM'],
     host=config['HOST'],
-    port=config['PORT'])
+    port=config['PORT'],
+    debug=config['DEBUG'],
+    reloader=config['AUTO_RELOAD'])

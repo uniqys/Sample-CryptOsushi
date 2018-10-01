@@ -71,7 +71,6 @@ export default {
       window.scrollTo(0, 0)
       if (this.$route.path !== this.localePath('index')) {
         this.$router.push({ path: this.localePath('index') })
-        await this.reset();
         await this.fetch();
       }
       this.generate()

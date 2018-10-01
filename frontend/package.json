@@ -1,8 +1,7 @@
 {
- "name": "cryptosushi",
- "version": "1.0.0",
- "description": "cryptosushi project",
- "author": "Kita Tomoya <kita@mfac.jp>",
+ "name": "frontend-of-CryptOsushi",
+ "description": "CryptOsushi is a sample decentralized application made with Uniqys Kit.",
+ "author": "Uniqys Project <https://uniqys.net>",
  "private": true,
  "scripts": {
   "mock": "json-server mock/api.json --routes mock/routes.json --port 3001",

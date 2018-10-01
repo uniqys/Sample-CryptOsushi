@@ -3,18 +3,47 @@ const ja = require('./assets/locales/ja.json');
 // eslint-disable-next-line
 const en = require('./assets/locales/en.json');
 
+const env = {
+  UNIQYS_NODE_HOST: process.env.UNIQYS_NODE_HOST || 'localhost',
+  UNIQYS_NODE_PORT: process.env.UNIQYS_NODE_PORT || '8080',
+  DAPP_ENDPOINT: process.env.DAPP_ENDPOINT || 'http://localhost:3000',
+}
+
+const TITLE = 'CryptOsushi'
+const DESCRIPTION = 'CryptOsushi is a sample decentralized application made with Uniqys Kit. Source code: https://github.com/uniqys/Sample-CryptOsushi'
+
 module.exports = {
   mode: 'spa',
   /*
   ** Headers of the page
   */
   head: {
-    title: 'cryptosushi',
-    meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }, {
-      hid: 'description',
-      name: 'description',
-      content: 'cryptosushi project',
-    },
+    title: TITLE,
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: DESCRIPTION,
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: TITLE,
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: DESCRIPTION,
+      },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:url', property: 'og:url', content: env.DAPP_ENDPOINT },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: `${env.DAPP_ENDPOINT}/img/ogp.png`,
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
@@ -68,9 +97,9 @@ module.exports = {
   ** Plugins
   */
   proxy: [
-    `http://${process.env.DAPP_HOST}:8080/sushi`,
-    `http://${process.env.DAPP_HOST}:8080/gari`,
-    `http://${process.env.DAPP_HOST}:8080/uniqys`,
+    `http://${env.UNIQYS_NODE_HOST}:${env.UNIQYS_NODE_PORT}/sushi`,
+    `http://${env.UNIQYS_NODE_HOST}:${env.UNIQYS_NODE_PORT}/gari`,
+    `http://${env.UNIQYS_NODE_HOST}:${env.UNIQYS_NODE_PORT}/uniqys`,
   ],
   plugins: [
     { src: '~plugins/webfontloader', ssr: false },
@@ -95,7 +124,7 @@ module.exports = {
     },
   },
   env: {
-    DAPP_ENDPOINT: (process.env.NODE_ENV === 'production' ? 'http://localhost:8080' : 'http://localhost:3000'),
+    DAPP_ENDPOINT: env.DAPP_ENDPOINT,
   },
   markdownit: {
     preset: 'default',
